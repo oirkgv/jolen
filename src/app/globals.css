@@ -1,0 +1,87 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+@import url('https://fonts.googleapis.com/css2?family=Cairo:wght@300;400;500;600;700;800;900&display=swap');
+
+:root {
+  --yellow: #FFE066;
+  --yellow-light: #FFF5CC;
+  --pink: #FF8FAB;
+  --pink-light: #FFD6E0;
+  --cream: #FFF9F0;
+}
+
+* {
+  box-sizing: border-box;
+}
+
+html {
+  scroll-behavior: smooth;
+}
+
+body {
+  font-family: 'Cairo', sans-serif;
+  direction: rtl;
+}
+
+/* Custom scrollbar */
+::-webkit-scrollbar {
+  width: 6px;
+}
+::-webkit-scrollbar-track {
+  background: #FFF5CC;
+}
+::-webkit-scrollbar-thumb {
+  background: #FF8FAB;
+  border-radius: 3px;
+}
+
+@layer components {
+  .btn-primary {
+    @apply bg-gradient-to-r from-jolen-pink to-jolen-pink-dark text-white font-bold py-3 px-6 rounded-2xl transition-all duration-300 hover:shadow-lg hover:scale-105 active:scale-95;
+  }
+
+  .btn-secondary {
+    @apply bg-gradient-to-r from-jolen-yellow to-jolen-yellow-dark text-gray-800 font-bold py-3 px-6 rounded-2xl transition-all duration-300 hover:shadow-lg hover:scale-105 active:scale-95;
+  }
+
+  .btn-outline {
+    @apply border-2 border-jolen-pink text-jolen-pink-dark font-bold py-3 px-6 rounded-2xl transition-all duration-300 hover:bg-jolen-pink hover:text-white;
+  }
+
+  .card {
+    @apply bg-white rounded-3xl shadow-sm border border-jolen-yellow-light overflow-hidden transition-all duration-300 hover:shadow-md;
+  }
+
+  .input-field {
+    @apply w-full rounded-2xl border-2 border-gray-200 bg-white px-4 py-3 text-gray-800 placeholder-gray-400 focus:border-jolen-pink focus:outline-none focus:ring-0 transition-colors;
+  }
+
+  .section-title {
+    @apply text-2xl font-black text-gray-800 mb-2;
+  }
+
+  .badge {
+    @apply inline-flex items-center gap-1 px-3 py-1 rounded-full text-xs font-bold;
+  }
+}
+
+/* Summer wave animation */
+@keyframes wave {
+  0% { transform: translateX(0); }
+  50% { transform: translateX(-25px); }
+  100% { transform: translateX(0); }
+}
+
+.wave-animation {
+  animation: wave 4s ease-in-out infinite;
+}
+
+/* Sticker rotation effect */
+.sticker {
+  transition: transform 0.3s ease;
+}
+.sticker:hover {
+  transform: rotate(5deg) scale(1.1);
+}
