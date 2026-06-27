@@ -94,8 +94,8 @@ export default function AdminProductsPage() {
           await adminUpdateProduct(editProduct.id, data);
           toast.success("تم تحديث المنتج ✅");
         } else {
-          await adminCreateProduct(data);
-          toast.success("تم إضافة المنتج 🎉");
+          await adminCreateProduct({...data, description_ar: data.description_ar ?? ""});
+          
         }
         setShowForm(false);
         fetch();
