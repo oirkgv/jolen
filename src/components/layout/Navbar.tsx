@@ -18,7 +18,7 @@ export default function Navbar() {
           {/* Logo */}
           <Link href="/" className="flex items-center gap-2 group">
             <div className="w-10 h-10 rounded-2xl bg-gradient-to-br from-jolen-yellow to-jolen-pink flex items-center justify-center text-white font-black text-lg shadow-md group-hover:scale-110 transition-transform">
-              🐈🍦
+              🐈
             </div>
             <div className="leading-tight">
               <p className="font-black text-gray-800 text-lg leading-none">جولين</p>
