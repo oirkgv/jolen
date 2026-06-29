@@ -43,7 +43,7 @@ export default function Footer() {
           <div className="text-center md:text-left">
             <p className="font-black text-gray-800 mb-3">معلومات</p>
             <div className="flex flex-col gap-2 text-sm text-gray-500">
-              <p>💳 الدفع عند الاستلام فقط</p>
+              <p>متجر جنى🐈 الين🐰 جود🐿️ ء  </p>
               <p>🚗 توصيل داخل المنطقة</p>
               <p>⏰ يومياً من 5 م – 11 م</p>
             </div>
@@ -52,7 +52,7 @@ export default function Footer() {
 
         <div className="mt-8 pt-6 border-t border-jolen-yellow-light text-center">
           <p className="text-xs text-gray-400">
-            © 2025 جولين JOLEN · صُنع بـ ❤️ في المملكة العربية السعودية
+            © 2025 جولين JOLEN · 👑صُنع بـ ❤️بواسطة الملكة جنى 
           </p>
         </div>
       </div>
