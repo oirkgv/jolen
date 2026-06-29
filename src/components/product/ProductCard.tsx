@@ -20,6 +20,7 @@ const PRODUCT_EMOJIS: Record<string, string> = {
   "موهيتو ريد": "🍒",
   "موهيتو بلو": "🫐",
   "موهيتو بربل": "🍇",
+  "ملصقات ": "🖼️",
 };
 
 const CATEGORY_COLORS: Record<string, { bg: string; border: string; badge: string }> = {
