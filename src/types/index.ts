@@ -22,6 +22,7 @@ export interface Product {
   name_en: string;
   description_ar: string | null;
   price: number;
+  stock: number
   image_url: string | null;
   is_available: boolean;
   is_limited: boolean;

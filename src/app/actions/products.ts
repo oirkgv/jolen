@@ -63,6 +63,7 @@ export async function adminCreateProduct(formData: {
   name_en: string;
   description_ar: string;
   price: number;
+  stock: number;
   is_available: boolean;
   is_limited: boolean;
   sort_order: number;
@@ -82,6 +83,7 @@ export async function adminUpdateProduct(
     name_en?: string;
     description_ar?: string;
     price?: number;
+    stock?: number;
     is_available?: boolean;
     is_limited?: boolean;
     sort_order?: number;

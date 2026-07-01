@@ -22,6 +22,7 @@ const schema = z.object({
   name_en: z.string().min(1, "مطلوب"),
   description_ar: z.string().optional(),
   price: z.coerce.number().min(0),
+  stock: z.coerce.number().min(0),
   is_available: z.boolean(),
   is_limited: z.boolean(),
   sort_order: z.coerce.number().default(0),
@@ -35,6 +36,7 @@ interface Product {
   name_en: string;
   description_ar: string | null;
   price: number;
+  stock: number;
   is_available: boolean;
   is_limited: boolean;
   sort_order: number;
@@ -53,7 +55,7 @@ export default function AdminProductsPage() {
 
   const { register, handleSubmit, reset, setValue, formState: { errors } } = useForm<FormData>({
     resolver: zodResolver(schema),
-    defaultValues: { is_available: true, is_limited: false, sort_order: 0 },
+    defaultValues: { stock: 0, is_available: true, is_limited: false, sort_order: 0 },
   });
 
   const fetch = async () => {
@@ -80,6 +82,7 @@ export default function AdminProductsPage() {
       name_en: p.name_en,
       description_ar: p.description_ar || "",
       price: p.price,
+      stock: p.stock,
       is_available: p.is_available,
       is_limited: p.is_limited,
       sort_order: p.sort_order,
@@ -243,11 +246,19 @@ export default function AdminProductsPage() {
                 <div>
                   <label className="block text-sm font-bold text-gray-700 mb-1">السعر (ريال) *</label>
                   <input {...register("price")} type="number" step="0.5" min="0" className="input-field" />
+                
                 </div>
                 <div>
-                  <label className="block text-sm font-bold text-gray-700 mb-1">الترتيب</label>
-                  <input {...register("sort_order")} type="number" min="0" className="input-field" />
-                </div>
+  <label className="block text-sm font-bold text-gray-700 mb-1">
+    المخزون
+  </label>
+  <input
+    {...register("stock")}
+    type="number"
+    min="0"
+    className="input-field"
+  />
+</div>
               </div>
 
               <div className="flex gap-4">
