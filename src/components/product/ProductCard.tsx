@@ -103,10 +103,19 @@ export default function ProductCard({ product }: ProductCardProps) {
               </span>
             )}
 
-            <button className="mr-auto flex items-center gap-2 bg-gradient-to-r from-jolen-pink to-jolen-pink-dark text-white text-sm font-bold py-2 px-4 rounded-2xl hover:shadow-md transition-all hover:scale-105 active:scale-95">
-              <ShoppingBag size={14} />
-              أضف
-            </button>
+            {product.stock > 0 ? (
+  <button className="mr-auto flex items-center gap-2 bg-gradient-to-r from-jolen-pink to-jolen-pink-dark text-white text-sm font-bold py-2 px-4 rounded-2xl hover:shadow-md transition-all hover:scale-105 active:scale-95">
+    <ShoppingBag size={14} />
+    أضف
+  </button>
+) : (
+  <button
+    disabled
+    className="mr-auto bg-gray-300 text-gray-600 text-sm font-bold py-2 px-4 rounded-2xl cursor-not-allowed"
+  >
+    نفدت الكمية
+  </button>
+)}
           </div>
         </div>
       </div>
