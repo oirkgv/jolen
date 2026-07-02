@@ -77,6 +77,19 @@ export default function ProductCard({ product }: ProductCardProps) {
             </div>
           </div>
 
+<div className="mt-2">
+  {product.stock > 0 ? (
+    <p className="text-xs text-green-600 font-semibold">
+      المتبقي: {product.stock}
+    </p>
+  ) : (
+    <p className="text-xs text-red-600 font-semibold">
+      ❌ نفدت الكمية
+    </p>
+  )}
+</div>
+
+
           {product.description_ar && (
             <p className="text-xs text-gray-500 leading-relaxed mb-3 line-clamp-2">
               {product.description_ar}
